@@ -1,0 +1,46 @@
+﻿<Window x:Class="LibraryManagementSystem.Admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryManagementSystem"
+        mc:Ignorable="d"
+        Title="Admin" Height="450" Width="800"
+        
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="#ec8f00">
+    <Grid>
+        <ListBox Name="bookListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="580" Height="200" ItemsSource="{Binding BookList}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding BookTitle}" />
+                        <TextBlock Text="{Binding Author}" />
+                        <TextBlock Text="{Binding CopiesText}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button x:Name="addBookButton" Content="Add Book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,220,0,0" Width="100" Height="25" Click="addBookButton_Click"/>
+        <Button x:Name="removebookButton" Content="Remove Book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,250,0,0" Width="100" Height="25" Click="removebookButton_Click"/>
+        <Button x:Name="updateBookButton" Content="Update Book" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,280,0,0" Width="100" Height="25" Click="updateBookButton_Click"/>
+        <Button x:Name="BackButton" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,380,0,0" Width="100" Height="25" Click="BackButton_Click"/>
+        
+        <Label Content="Author" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,220,0,0" Width="100" Height="25"/>
+
+        
+        <TextBox x:Name="authorTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,220,0,0" Width="100" Height="25"/>
+        <Label Content="Book Title" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="136,260,0,0" Width="100" Height="25"/>
+        
+        <TextBox x:Name="bookTitleTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,260,0,0" Width="100" Height="25"/>
+        <Label Content="Total Copies" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="125,300,0,0" Width="100" Height="25"/>
+        
+        
+        <TextBox x:Name="totalCopiesTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="200,300,0,0" Width="100" Height="25"/>
+
+        <TextBox x:Name="searchTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="320,220,0,0" Width="150" Height="25" TextChanged="searchTextBox_TextChanged"/>
+        <Button Name="searchButton" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="480,220,0,0" Width="75" Height="25" Click="searchButton_Click"/>
+
+    </Grid>
+</Window>

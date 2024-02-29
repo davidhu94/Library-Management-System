@@ -1,0 +1,26 @@
+﻿<Window x:Class="LibraryManagementSystem.BorrowersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LibraryManagementSystem"
+        mc:Ignorable="d"
+        Title="BorrowersWindow" Height="450" Width="800"
+        
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="#ec8f00">
+    <Grid>
+        <ListBox Name="BorrowersListBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Width="580" Height="200">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Name}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Button Name ="ContinueButton" Content="Continue" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,220,0,0" Width="100" Height="25" Click="ContinueButton_Click"/>
+    </Grid>
+</Window>
